@@ -65,9 +65,10 @@ form button {
 	}
 
 </style>
+
   </head>
   <body>
-    <p>Now chatting with [insert random nick name].</p>
+    <p>You will now be known as number <span id = "name"></span></p> 
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
@@ -76,11 +77,14 @@ form button {
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="index.js"></script>
     <script>
       $(function () {
+	  var number = Math.floor(Math.random() * (1000 - 2)) + 2;
+	  document.getElementById("name").innerHTML = number;
         var socket = io();
         $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
+          socket.emit('chat message', number + " : " + $('#m').val());
           $('#m').val('');
           return false;
         });
