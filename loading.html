@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+	position: absolute;
+	margin-left: 45%;
+	margin-top: 3%;
+	
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#text {
+	position:absolute;
+	margin-left: 30%;
+	margin-top: 15%;
+
+}
+</style>
+	<!-- default-css-files -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/ask_for_help.css" />
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script>setTimeout(function(){window.location.href='chatDisplay.html'},3000);</script>
+</head>
+<body>
+<img src="images/logo.png" class="logo" onclick="location.href='welcome.html';">
+<div class="loader"></div>
+<h2 id="text">Matching you to a Peer</h2>
+</body>
+</html>
