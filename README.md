@@ -1,5 +1,7 @@
 # Peer 2 Peer
 
+https://www.canva.com/design/DACkm2plzlw/PUpQaKZ1gAb-CHfMvrmHnw/edit
+
 ## Inspiration
 Frequently, speaking with someone who is a "mentor" can be a daunting task. Trust is hard to build with authority figures, and a lot of times it's too scary for young people to follow through. We wanted to help break down the barrier of finding help by evening out the playing field. We wanted to help bridge the gap between students that can easily slip through the cracks (under-privileged students, perhaps at a magnet school) and students that have experienced similar things at a different institution to talk about common problems that they are both facing. 
 
