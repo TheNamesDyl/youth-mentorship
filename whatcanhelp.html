@@ -11,6 +11,15 @@
 	<link type="text/css" rel="stylesheet" href="css/ask_for_help.css" />
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<script>
+	function popup(){
+	
+	newwindow=window.open("speech.html",'name','height=350,width=500');
+	if (window.focus) {newwindow.focus()}
+	return false;
+	}
+	</script>
 </head>
 <!-- Head -->
 
@@ -19,7 +28,8 @@
 
 	<form class="row">
         <div class="input-field col s8 offset-s2">
-        	<input id="search" type="search" placeholder="Input what you want to help with..." required>
+        	<input id="search" type="search" placeholder="Input your problem here..." required>
+            <i onclick="popup()" class="material-icons" id="microphone-button">mic_none</i>
         	<label class="label-icon col s1" for="search" id="search-icon-label"><img src="images/search.png"/></label>
         </div>
     </form>
@@ -31,7 +41,7 @@
     	<div onclick="location.href='loading.html';" class="col s2 offset-s2">
     		<div class="card red lighten-4">
     			<div class="card-content" id="card-content-1">
-    				<p>I can help anxiety</p>
+    				<p>I can help with anxiety</p>
     			</div>
     		</div>
     	</div>
