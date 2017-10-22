@@ -3,6 +3,10 @@
 <head>
     <title>Handwriting Sample</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/handwriting.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
 </head>
 <body>
 
@@ -13,7 +17,7 @@
         // **********************************************
 
         // Replace the subscriptionKey string value with your valid subscription key.
-        var subscriptionKey = "a7119099b17441d58bf775e0e5a1f6e1";
+        var subscriptionKey = "YOUR API KEY HERE";
 
         // Replace or verify the region.
         //
@@ -84,10 +88,9 @@
                     
                     // $("#responseTextArea").val(JSON.stringify(data, null, 2));
                     var listItems = data.recognitionResult.lines;
-                    
+                    $("#keywords").append("<h5> We have found some keywords that might be helpful for others looking to answer your question, we'll try our best to match you with a proper mentor </h5>")
                     for (var d = 0; d < listItems.length; d++) {
-                        console.log(listItems[d].text);
-                        $("#search-tag-items").val($('#search-tag-items').val() + listItems[d].text + ", ");   
+                        $("#keywords").append('<div class="card red lighten-4">' + listItems[d].text + '</div>');
                     }
                 
                 })
@@ -114,30 +117,26 @@
         });
     };
 </script>
-<h3>Read handwritten image image:</h3>
-Enter the URL to an image of handwritten text, then click the <strong>Read image</strong> button.
-<br><br>
-Image to read: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Cursive_Writing_on_Notebook_paper.jpg/800px-Cursive_Writing_on_Notebook_paper.jpg" />
-<button id="read-image" onclick="processImage()">Read image</button>
-<br><br>
-    <div id="wrapper" style="width:1020px; display:table;">
-        <div id="jsonOutput" style="width:600px; display:table-cell;">
-            Response:
-            <br><br>
+    <div class="container">
+        <h3>Upload a picture to get tags:</h3>
+        Use a picture to bring up tags to search for people who want to help with things in your picture!
+        <br><br>
+        Image to read: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Cursive_Writing_on_Notebook_paper.jpg/800px-Cursive_Writing_on_Notebook_paper.jpg" />
+        <button id="read-image" onclick="processImage()">Read image</button>
+        <br><br>
+        <div id="wrapper" style="width:1020px; display:table;">
             
+            <div id="imageDiv" style="width:420px; display:table-cell;">
+                Source image:
+                <br><br>
+                <img id="sourceImage" width="400" />
+            </div>
         </div>
-        <div id="imageDiv" style="width:420px; display:table-cell;">
-            Source image:
-            <br><br>
-            <img id="sourceImage" width="400" />
-        </div>
-    </div>
 
-<form class="row">
-        <div class="input-field col s8 offset-s2">
-            <input id="search-tag-items" type="search" placeholder="Input your problem here..." required>
-            <label class="label-icon col s1" for="search" id="search-icon-label"><i class="material-icons">search</i></label>
+        <div id="keywords">
+
         </div>
-    </form>
+
+    </div>
 </body>
 </html>

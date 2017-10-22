@@ -1,0 +1,10 @@
+body {
+	background-image: url("../images/ask_for_help_img.png");
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#card-content-4 {
+	color: #ff6f00;
+}
