@@ -1,5 +1,16 @@
+body {
+	background-image: url("../images/ask_for_help_img.png");
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
 #search-icon-label {
 	right: 0;
+}
+
+#search-icon-label img{
+	width: 25px;
 }
 
 #card-content-1,
