@@ -13,6 +13,11 @@ body {
 	width: 25px;
 }
 
+#microphone-button{
+	margin-right: 7%;
+	top: 18%;
+}
+
 #card-content-1,
 #card-content-5 {
 	color: #b71c1c;
