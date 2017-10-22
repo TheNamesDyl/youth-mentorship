@@ -1,0 +1,10 @@
+html,
+body {
+	height: 100%;
+}
+
+.logo {
+	margin-top: 5%;
+	margin-left: 5%;
+	height: 50px;
+}
