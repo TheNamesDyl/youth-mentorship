@@ -5,20 +5,86 @@
     <!--<link href="css/materialize.css" type="text/css" rel="stylesheet" />-->
     <link href="css/chatcss.css" type="text/css" rel="stylesheet" />
     <!--<link href="css/style.css" type="text/css" rel="stylesheet" />-->
+	
+    <style>
+* { 
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box; 
+	}
+
+body { 
+	font: 13px Helvetica, Arial; 
+	}	
+
+form {
+	background: white; 
+	padding: 3px; 
+	position: fixed; 
+	bottom: 0; 
+	width: 100%; 
+	}
+
+form input {
+	border: 2px solid lightgrey;
+	border-radius: 4px; 
+	padding: 10px; 
+	width: 90%; 
+	margin-right: .5%;
+	margin-bottom: 3px; 
+	margin-left: 2px; 
+	}
+
+form button { 
+	width: 9%;
+	background: #ffc107; 
+	border: none; 
+	border-radius: 4px; 
+	padding: 11.6px; 
+	color: white;
+	font-weight: bold;
+
+	}
+
+#messages { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	}
+
+#messages li { 
+	padding: 5px 10px; 
+	}
+
+#messages li:nth-child(odd) { 
+	background: #eee; 
+	}
+
+#messages { 
+	margin-bottom: 40px ;
+	}
+
+</style>
+
   </head>
   <body>
-    <p>Now chatting with [insert random nick name].</p>
+    <p>You will now be known as number <span id = "name"></span></p> 
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
+
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="index.js"></script>
     <script>
       $(function () {
+	  var number = Math.floor(Math.random() * (1000 - 2)) + 2;
+	  document.getElementById("name").innerHTML = number;
         var socket = io();
         $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
+          socket.emit('chat message', number + " : " + $('#m').val());
           $('#m').val('');
           return false;
         });
