@@ -8,6 +8,10 @@ body {
 #search-icon-label {
 	right: 0;
 }
+#microphone-button{
+	margin-right: 7%;
+	top: 18%;s
+}
 
 #search-icon-label img{
 	width: 25px;

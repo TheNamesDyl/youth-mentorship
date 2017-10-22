@@ -1,13 +1,11 @@
-#hello {
-  padding-top: 50px;
-}
 
 #now {
   padding-bottom: 40px;
 }
 
 #bottom {
-  margin-top: -200px;
+  position: absolute;
+  margin-top: -280px;
 }
 
 #girl, #boy {
