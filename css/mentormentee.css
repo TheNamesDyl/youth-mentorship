@@ -1,0 +1,21 @@
+#hello {
+  padding-top: 50px;
+}
+
+#now {
+  padding-bottom: 40px;
+}
+
+#bottom {
+  margin-top: -200px;
+}
+
+#girl, #boy {
+  height: 200px;
+  display: block;
+  margin: auto;
+}
+
+#menteediv, #mentordiv {
+  width: 250px;
+}
